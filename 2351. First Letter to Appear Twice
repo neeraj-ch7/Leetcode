@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+class Solution {
+    public char repeatedCharacter(String s) {
+
+        ArrayList<Character> names = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (names.contains(ch)) {
+                return ch; 
+            } else {
+                names.add(ch);
+            }
+        }
+        return ' ';
+    }
+}
