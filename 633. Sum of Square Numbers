@@ -9,9 +9,9 @@ class Solution {
             if (sum == c) {
                 return true;
             } else if (sum < c) {
-                left++;
+                ++left;
             } else {
-                right--;
+                ++right;
             }
         }
         return false;
