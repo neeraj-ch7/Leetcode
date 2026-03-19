@@ -30,7 +30,7 @@
 30                countX[i][j] = upX + leftX - diagX + xVal;
 31
 32                if (balance[i][j] == 0 && countX[i][j] > 0) {
-33                    ans++;
+33                    ++ans;
 34                }
 35            }
 36        }
