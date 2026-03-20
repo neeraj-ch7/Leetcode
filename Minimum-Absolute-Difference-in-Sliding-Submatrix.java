@@ -29,17 +29,18 @@
 29                for (int idx = 1; idx < temp.size(); idx++) {
 30                    int curr = temp.get(idx);
 31
-32                    if (curr != prev) {
-33                        minDiff = Math.min(minDiff, curr - prev);
-34                        prev = curr;
-35                    }
-36                }
-37
-38                // if all elements same → minDiff remains MAX_VALUE
-39                ans[i][j] = (minDiff == Integer.MAX_VALUE) ? 0 : minDiff;
-40            }
-41        }
-42
-43        return ans;
-44    }
-45}
+32                    if (curr != prev)
+33                     {
+34                        minDiff = Math.min(minDiff, curr - prev);
+35                        prev = curr;
+36                    }
+37                }
+38
+39                // if all elements same → minDiff remains MAX_VALUE
+40                ans[i][j] = (minDiff == Integer.MAX_VALUE) ? 0 : minDiff;
+41            }
+42        }
+43
+44        return ans;
+45    }
+46}
