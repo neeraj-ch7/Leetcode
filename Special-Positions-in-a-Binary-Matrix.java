@@ -1,31 +1,33 @@
-1class Solution {
-2    public int numSpecial(int[][] mat) {
-3
-4        int m = mat.length;
-5        int n = mat[0].length;
-6
-7        int[] row = new int[m];
-8        int[] col = new int[n];
-9
-10        for(int i = 0; i < m; i++){
-11            for(int j = 0; j < n; j++){
-12                if(mat[i][j] == 1){
-13                    ++row[i];
-14                    ++col[j];
-15                }
-16            }
-17        }
-18
-19        int count = 0;
+1import java.util.*;
+2
+3class Solution {
+4    public int numSpecial(int[][] mat) {
+5
+6        int m = mat.length;
+7        int n = mat[0].length;
+8
+9        int[] row = new int[m];
+10        int[] col = new int[n];
+11
+12        for(int i = 0; i < m; i++){
+13            for(int j = 0; j < n; j++){
+14                if(mat[i][j] == 1){
+15                    ++row[i];
+16                    ++col[j];
+17                }
+18            }
+19        }
 20
-21        for(int i = 0; i < m; i++){
-22            for(int j = 0; j < n; j++){
-23                if(mat[i][j] == 1 && row[i] == 1 && col[j] == 1){
-24                    ++count;
-25                }
-26            }
-27        }
-28
-29        return count;
-30    }
-31}
+21        int count = 0;
+22
+23        for(int i = 0; i < m; i++){
+24            for(int j = 0; j < n; j++){
+25                if(mat[i][j] == 1 && row[i] == 1 && col[j] == 1){
+26                    ++count;
+27                }
+28            }
+29        }
+30
+31        return count;
+32    }
+33}
