@@ -1,23 +1,25 @@
-1class Solution {
-2    public int findDuplicate(int[] nums) {
-3        
-4      int slow=0;
-5      int fast =0;
-6
-7      while(true){
-8         slow=nums[slow];
-9         fast=nums[fast];
-10         fast=nums[fast];
-11         if(slow==fast){
-12            slow=0;
-13         while(slow!=fast){
-14            slow=nums[slow];
-15            fast=nums[fast];
-16           }
-17           return slow;
-18         }
-19        
-20      }
-21
-22    }
-23}
+1import java.util.*;
+2
+3class Solution {
+4    public int findDuplicate(int[] nums) {
+5        
+6      int slow=0;
+7      int fast =0;
+8
+9      while(true){
+10         slow=nums[slow];
+11         fast=nums[fast];
+12         fast=nums[fast];
+13         if(slow==fast){
+14            slow=0;
+15         while(slow!=fast){
+16            slow=nums[slow];
+17            fast=nums[fast];
+18           }
+19           return slow;
+20         }
+21        
+22      }
+23
+24    }
+25}
