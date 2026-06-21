@@ -16,23 +16,18 @@
 16
 17        if(f%2==0){
 18          res +=f;
-19        }else{
-20            odd= true;
-21        }   
-22      }
-23
-24      if(odd == false){
-25        return res;
-26      }
-27
-28      for(char c : need.keySet()){
-29        int f = need.get(c);
-30        if(f%2==1){
-31            res += f-1;
-32        }
-33      }
-34
-35      return res+1;
-36
-37    }
-38}
+19        }
+20        if(f%2==1){
+21            res += f-1;
+22            odd =true;
+23        }  
+24      }
+25
+26      if(odd == false){
+27        return res;
+28      }
+29
+30      return res+1;
+31
+32    }
+33}
