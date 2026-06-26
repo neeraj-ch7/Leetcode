@@ -1,42 +1,40 @@
 1class Solution {
-2    public int[] searchRange(int[] nums, int target) {
-3       int t = target;
-4        int[] r = {-1,-1};
+2
+3    public int binarySearch(int[] nums, int target, boolean first) {
+4
 5        int low = 0;
-6        int high = nums.length-1;
-7        int res = -1 ;
-8        while(low<=high){
-9            int mid = low + (high -low)/2;
-10            if(t< nums[mid]){
-11                high = mid-1;
-12            }else if(t>nums[mid]){
-13                low = mid +1;
-14            }else{
-15                res = mid;
-16                high = mid -1;
-17            }
-18        }
-19        
-20            r[0] = res;
-21         low = 0;
-22         high = nums.length-1;
-23         res = -1 ;
-24
-25
-26            while(low<=high){
-27            int mid = low + (high -low)/2;
-28            if(t< nums[mid]){
-29                high = mid-1;
-30            }else if(t>nums[mid]){
-31                low = mid +1;
-32            }else{
-33                res = mid;
-34                low = mid +1;
-35            }
-36    } 
-37        r[1] = res;
-38
-39    return r;
+6        int high = nums.length - 1;
+7        int ans = -1;
+8
+9        while (low <= high) {
+10
+11            int mid = low + (high - low) / 2;
+12
+13            if (target < nums[mid]) {
+14                high = mid - 1;
+15            } else if (target > nums[mid]) {
+16                low = mid + 1;
+17            } else {
+18                ans = mid;
+19
+20                if (first) {
+21                    high = mid - 1;   // left side search
+22                } else {
+23                    low = mid + 1;    // right side search
+24                }
+25            }
+26        }
+27
+28        return ans;
+29    }
+30
+31    public int[] searchRange(int[] nums, int target) {
+32
+33        int[] ans = new int[2];
+34
+35        ans[0] = binarySearch(nums, target, true);
+36        ans[1] = binarySearch(nums, target, false);
+37
+38        return ans;
+39    }
 40}
-41
-42}
