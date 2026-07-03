@@ -5,6 +5,8 @@ class Solution {
         int low = 0;
         int high = n*m -1;
 
+        if(matrix[0][0]> target) return false;
+
         while(low<=high){
             int mid = low + (high-low)/2;
             int row = mid/m;
