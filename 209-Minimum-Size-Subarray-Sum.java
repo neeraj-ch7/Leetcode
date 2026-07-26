@@ -14,7 +14,7 @@ class Solution {
             }
             j++;
         }
-        if(len!=Integer.MAX_VALUE) return len;
-        return 0;
+        return len == Integer.MAX_VALUE? 0: len;
+       
     }
 }
